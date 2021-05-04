@@ -19,7 +19,7 @@ export class ConsumersComponent implements OnInit {
 
   ngOnInit() {
 
-    this.consumers$.subscribe(c => console.log(c))
+    // this.consumers$.subscribe(c => console.log(c))
     this.getAll();
   }
 
