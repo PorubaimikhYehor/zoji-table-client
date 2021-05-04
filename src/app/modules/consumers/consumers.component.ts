@@ -20,7 +20,7 @@ export class ConsumersComponent implements OnInit {
   ngOnInit() {
 
     // this.consumers$.subscribe(c => console.log(c))
-    this.getAll();
+    this.getWithQuery(10,10);
   }
 
   addOne(consumer: Consumer) {
@@ -33,6 +33,9 @@ export class ConsumersComponent implements OnInit {
 
   getAll() {
     this.consumerService.getAll();
+  }
+  getWithQuery(limit: number, skip:number){
+    this.consumerService.getWithQuery(`limit=${limit}&skip=${skip}`)
   }
 
   updateOne(consumer: Consumer) {
