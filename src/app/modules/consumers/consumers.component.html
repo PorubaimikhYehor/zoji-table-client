@@ -1,2 +1,2 @@
 <p>consumers works!</p>
-<app-consumers-table [consumers$]="consumers$"></app-consumers-table>
+<app-consumers-table (pageEvent)="pageEvent($event)" [consumers$]="consumers$" [pagination]="pagination"></app-consumers-table>

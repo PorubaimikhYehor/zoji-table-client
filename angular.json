@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "zoji-table"
+  "defaultProject": "zoji-table",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

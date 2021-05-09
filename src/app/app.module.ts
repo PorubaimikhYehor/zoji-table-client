@@ -16,7 +16,7 @@ import { AppStoreModule } from './app-store/app-store.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     ConsumersModule,
-    AppStoreModule
+    AppStoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

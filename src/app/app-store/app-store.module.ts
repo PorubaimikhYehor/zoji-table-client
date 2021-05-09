@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
-import { DefaultDataServiceConfig, EntityDataModule } from '@ngrx/data';
-import { entityConfig } from './entity-metadata';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from '.';
+import { ConsumerEffects } from './consumer/consumer.effects';
 
-const defaultDataServiceConfig: DefaultDataServiceConfig = {
-  root: 'http://localhost:3000/api/',
-  timeout: 3000, // request timeout
-}
 
 @NgModule({
   imports: [
     HttpClientModule,
-    StoreModule.forRoot({}),
-    EffectsModule.forRoot([]),
-    EntityDataModule.forRoot(entityConfig)
-  ],
-  providers: [{ provide: DefaultDataServiceConfig, useValue: defaultDataServiceConfig }]
+    EffectsModule.forRoot([
+      ConsumerEffects
+    ]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+  ]
 })
 export class AppStoreModule { }
