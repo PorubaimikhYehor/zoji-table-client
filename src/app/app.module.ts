@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsumersModule } from './modules/consumers/consumers.module';
 import { AppStoreModule } from './app-store/app-store.module';
 import { UsersModule } from './modules/users/users.module';
+import { DepartmentsModule } from './modules/departments/departments.module';
+import { RegionsModule } from './modules/regions/regions.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { UsersModule } from './modules/users/users.module';
     BrowserAnimationsModule,
     ConsumersModule,
     AppStoreModule,
-    UsersModule
+    UsersModule,
+    DepartmentsModule,
+    RegionsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
