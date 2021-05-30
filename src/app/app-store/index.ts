@@ -7,15 +7,18 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 import * as fromConsumer from './consumer/consumer.reducer';
+import * as fromUser from './user/user.reducer';
 
 
 export interface State {
 
   [fromConsumer.consumersFeatureKey]: fromConsumer.State;
+  [fromUser.usersFeatureKey]: fromUser.State;
 }
 
 export const reducers: ActionReducerMap<State> = {
   [fromConsumer.consumersFeatureKey]: fromConsumer.reducer,
+  [fromUser.usersFeatureKey]: fromUser.reducer,
 };
 
 

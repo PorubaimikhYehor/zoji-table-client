@@ -12,15 +12,12 @@ import { of } from 'rxjs';
 @Injectable()
 export class ConsumerEffects {
 
-
-  loadMovies$ = createEffect(() => this.actions$.pipe(
+  loadConsumers$ = createEffect(() => this.actions$.pipe(
     ofType(ConsumerActions.loadConsumers),
     mergeMap(({ query }) => this.httpService.get(`${fromConsumer.consumersFeatureKey}/${query}`).pipe(
       map(({ consumers, pagination }) => ConsumerActions.loadConsumersSuccess({ consumers, pagination })),
     )),
   ));
-
-
 
   constructor(
     private actions$: Actions,

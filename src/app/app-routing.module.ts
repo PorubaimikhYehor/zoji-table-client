@@ -2,6 +2,7 @@ import { Route } from '@angular/compiler/src/core';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ConsumersComponent } from './modules/consumers/consumers.component';
+import { UsersComponent } from './modules/users/users.component';
 
 export interface RouteConfig extends Route {
   title?: string;
@@ -32,7 +33,8 @@ export interface RouteConfig extends Route {
 
 const routes: Routes = [
   { path: 'consumers', component: ConsumersComponent },
-  { path: '**', redirectTo: 'consumers' }
+  { path: 'users', component: UsersComponent },
+  { path: '**', redirectTo: 'users' }
 
 ]
 
