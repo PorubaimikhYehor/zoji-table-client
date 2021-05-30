@@ -11,7 +11,6 @@ import * as fromUser from './user/user.reducer';
 
 
 export interface State {
-
   [fromConsumer.consumersFeatureKey]: fromConsumer.State;
   [fromUser.usersFeatureKey]: fromUser.State;
 }
