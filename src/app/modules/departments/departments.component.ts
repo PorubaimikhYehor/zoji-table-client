@@ -37,5 +37,4 @@ export class DepartmentsComponent implements OnInit {
   updateOne(item: Department) {
     this.entityService.update(item);
   }
-
 }
