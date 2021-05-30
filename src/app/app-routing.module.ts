@@ -1,7 +1,7 @@
-import { Route } from '@angular/compiler/src/core';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Route, RouterModule, Routes } from '@angular/router';
 import { ConsumersComponent } from './modules/consumers/consumers.component';
+import { DepartmentsComponent } from './modules/departments/departments.component';
 import { UsersComponent } from './modules/users/users.component';
 
 export interface RouteConfig extends Route {
@@ -10,8 +10,10 @@ export interface RouteConfig extends Route {
   noMenu?: boolean;
 }
 
-// export const routesConfig: RouteConfig[] = [
-//   { path: 'consumers', component: ConsumersComponent, title: 'Consumers', icon: 'file-document-edit-outline' },
+export const routesConfig: RouteConfig[] = [
+  { path: 'consumers', component: ConsumersComponent, title: 'Consumers', icon: 'file-document-edit-outline' },
+  { path: 'users', component: UsersComponent, title: 'Users', icon: 'file-document-edit-outline' },
+  { path: 'departments', component: DepartmentsComponent, title: 'Departments', icon: 'file-document-edit-outline' },
 //   // { path: 'languages', component: LanguagesComponent, title: 'Languages', icon: 'web' },
 //   // { path: 'templates', component: TemplatesComponent, title: 'Templates', icon: 'file-document-outline' },
 //   // { path: 'content', component: ContentComponent, title: 'Content', icon: 'text-box-multiple-outline' },
@@ -21,22 +23,23 @@ export interface RouteConfig extends Route {
 //   // { path: 'countries', component: CountryComponent, title: 'Countries', icon: 'web', noMenu: false },
 //   // // { path: 'home', component: HomeComponent },
 //   // { path: '**', redirectTo: 'document-creator', noMenu: true }
-// ];
+];
 
-// const routes: Routes = routesConfig.map(r => {
-//   const route: Route = {};
-//   route.path = r.path;
-//   if (r.component) route.component = r.component;
-//   if (r.redirectTo) route.redirectTo = r.redirectTo;
-//   return route
-// })
+const routes: Routes = routesConfig.map(r => {
+  const route: Route = {};
+  route.path = r.path;
+  if (r.component) route.component = r.component;
+  if (r.redirectTo) route.redirectTo = r.redirectTo;
+  return route
+})
 
-const routes: Routes = [
-  { path: 'consumers', component: ConsumersComponent },
-  { path: 'users', component: UsersComponent },
-  { path: '**', redirectTo: 'users' }
+// const routes: Routes = [
+//   { path: 'consumers', component: ConsumersComponent },
+//   { path: 'users', component: UsersComponent },
+//   { path: 'departments', component: UsersComponent },
+//   { path: '**', redirectTo: 'users' }
 
-]
+// ]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
